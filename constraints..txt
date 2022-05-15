@@ -1,0 +1,53 @@
+use brp;
+CREATE TABLE Student(Id INTEGER, LastName TEXT NOT NULL, FirstName TEXT NOT NULL, City VARCHAR(35));
+desc student;
+INSERT INTO Student VALUES(1, 'Hanks', 'Peter', 'New York');  
+select * from student;
+INSERT INTO Student VALUES(2, NULL, 'Amanda', 'Florida');
+alter table student
+modify lastname varchar(30) unique;
+INSERT INTO Student VALUES(2, 'hanska', 'bob', 'banglr');
+alter table student
+add age int(20) check(age>=20);
+INSERT INTO Student VALUES(4, 'lanka', 'piter', 'mumbai',15);
+INSERT INTO Student VALUES(2, 'kumar', 'rehan', 'pune',20);
+alter table student
+
+--------------------constraints----------------------------
+
+modify city varchar(20) default 'banglore';
+INSERT INTO Student (id, Lastname, Firstname, age) values(6,'shree', 'rehan', 20);
+select * from student;
+CREATE TABLE Persons(  
+        id int NOT NULL PRIMARY KEY,  
+        name varchar(45) NOT NULL,  
+        age int,  
+        City varchar(25)  
+);  
+desc persons;
+ALTER TABLE persons  
+DROP COLUMN occupation; 
+INSERT INTO Persons(Id, Name, Age, city)   
+VALUES (1,'Robert', 28,'Florida'),
+ (2, 'Joseph', 35,'california'),
+ (3, 'Peter', 40, 'Alaska');  
+select * from persons;
+CREATE TABLE Animals(  
+id int NOT NULL AUTO_INCREMENT,   
+name CHAR(30) NOT NULL,   
+PRIMARY KEY (id));
+INSERT INTO Animals (name) VALUES   
+('Tiger'),('Dog'),('Penguin'),   
+('Camel'),('Cat'),('Ostrich');  
+select * from Animals;
+CREATE TABLE Shirts (    
+    id INT PRIMARY KEY AUTO_INCREMENT,     
+    name VARCHAR(35),     
+    size ENUM('small', 'medium', 'large', 'x-large')    
+);  
+INSERT INTO Shirts(id, name, size)     
+VALUES (1,'t-shirt', 'medium'),     
+(2, 'casual-shirt', 'small'); 
+INSERT INTO Shirts(id, name, size)     
+VALUES (3, 'formal-shirt', 'large'); 
+SELECT * FROM Shirts; 
